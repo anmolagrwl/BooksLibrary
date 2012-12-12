@@ -1,0 +1,16 @@
+<%= provide(:title, 'New Place') %>
+<h1>Creating new place</h1>
+
+<div class="row">
+  <div class="span8 offset2">
+    <%= form_for(@place) do |f| %>
+      <%= render 'shared/error_messages', object: @place %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit 'Create new place', class: 'btn btn-large btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+

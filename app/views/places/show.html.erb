@@ -1,0 +1,21 @@
+<% provide(:title, @place.name) %>
+
+<div class="row">
+  <aside class="span3">
+    <section>
+      <h1>
+        <%= @place.name %>
+      </h1>
+    </section>
+    <section>
+      <div class="edit_links_on_show">
+        <%= link_to 'Edit place', edit_place_path(@place) %>
+        <%= link_to 'Delete place', @place, method: :delete, confirm: 'Are you sure?' %>
+      </div>
+    </section>
+  </aside>
+  <div class="span9">
+    <p>Books will be there</p>
+  </div>
+</div>
+
