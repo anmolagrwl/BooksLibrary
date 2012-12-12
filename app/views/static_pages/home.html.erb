@@ -1,7 +1,12 @@
 <% provide(:title, 'Home') %>
 <div class="center hero-unit">
+  <% unless user_signed_in? %>
   <h1>Welcome to the Library!</h1>
   <p>
     This is the home page for the Books Library application.
   </p>
+    <%= link_to 'Sign up now!', new_user_registration_path, class: 'btn btn-large btn-primary' %>
+  <% else %>
+    <h1>Hello, user!</h1>
+  <% end %>
 </div>

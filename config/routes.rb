@@ -1,4 +1,6 @@
 Library::Application.routes.draw do
+  devise_for :user, :path => '', :path_names => {sign_in: 'sign_in', sign_out: 'sign_out', sign_up: 'sign_up'}
+
   root to: 'static_pages#home'
 
 
