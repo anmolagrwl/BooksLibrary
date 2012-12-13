@@ -3,7 +3,12 @@ Library::Application.routes.draw do
   resources :books
   resources :places
 
-  devise_for :user, :path => '', :path_names => {sign_in: 'sign_in', sign_out: 'sign_out', sign_up: 'sign_up'}
+  devise_for :users, only: [:sessions, :registration]
+  #do
+  #  get '/sign_in' => 'devise/sessions#new'
+  #  get '/sign_out' => 'devise/sessions#destroy'
+  #  get '/sign_up' => 'devise/registrations#new'
+  #end
 
   root to: 'static_pages#home'
 

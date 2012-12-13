@@ -34,14 +34,28 @@
         <%= f.password_field :current_password %>
       </div>
 
-      <div><%= f.submit 'Save changes', class: 'btn btn-large btn-primary' %></div>
+      <div class="form-actions">
+        <%= f.submit 'Save changes', class: 'btn btn-primary' %>
+        <%= link_to 'Cancel', :back, class: 'btn pull-right' %>
+      </div>
     <% end %>
 
-    <!--<h3>Cancel my account</h3>
+    <div class="alert alert-error danger">
+      <h3 class="center">Cancel Account</h3>
+      <div class="well center">
+        <p>
+          This action will completely remove your account and cannot be undone!
+        </p>
+        <%= link_to 'Cancel my account', registration_path(resource_name), data: {confirm: 'Are you sure?'},
+                    method: :delete,
+                    class: 'btn btn-danger center' %>
+      </div>
+    </div>
 
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => {:confirm => "Are you sure?"}, :method => :delete %>
+    <!--
+    <p>Unhappy?
       .</p>-->
 
-    <%= link_to 'Back', :back %>
+
   </div>
 </div>

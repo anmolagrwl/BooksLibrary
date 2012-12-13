@@ -7,6 +7,6 @@
   </p>
     <%= link_to 'Sign up now!', new_user_registration_path, class: 'btn btn-large btn-primary' %>
   <% else %>
-    <h1>Hello, user!</h1>
+    <h1>Hello, <%= current_user.name %>!</h1>
   <% end %>
 </div>

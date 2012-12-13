@@ -1,11 +1,11 @@
 <% provide(:title, 'My books') %>
-<h1>All books</h1>
+<h1>My Books</h1>
 
 <ul class="index_list">
   <%= render @books %>
 </ul>
 
 <div class="create_buttons_on_show">
-  <%= link_to 'Add Book', new_book_path, class: 'btn btn-large btn-primary' %>
+  <%= link_to 'Add new Book', new_book_path, class: 'btn' %>
 </div>
 

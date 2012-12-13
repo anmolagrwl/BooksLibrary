@@ -22,7 +22,10 @@
       <%= f.label :place_id %>
       <%= f.collection_select :place_id, current_user.places, :id, :name, include_blank: 'Please select' %>
 
-      <%= f.submit 'Create new book', class: 'btn btn-large btn-primary' %>
+      <div class="form-actions">
+        <%= f.submit 'Create new book', class: 'btn btn-primary' %>
+        <%= link_to 'Cancel', :back, class: 'btn pull-right' %>
+      </div>
     <% end %>
   </div>
 </div>

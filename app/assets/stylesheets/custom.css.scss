@@ -194,6 +194,10 @@ input {
   }
 }
 
+form {
+  margin-bottom: 10px;
+}
+
 .alert-alert {
   @extend .alert-error;
 }
@@ -205,6 +209,10 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.danger {
+  padding: 8px 14px;
 }
 
 /* index list */

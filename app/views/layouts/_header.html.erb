@@ -21,7 +21,13 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <li>
+              <div>
+                <a href="<%= new_user_session_path %>" class="btn">
+                  <i class="icon-user"></i>
+                  Sign in
+                </a>
+              </div>
           <% end %>
         </ul>
       </nav>
