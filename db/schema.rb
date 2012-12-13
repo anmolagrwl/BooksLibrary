@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212203922) do
+ActiveRecord::Schema.define(:version => 20121213143525) do
+
+  create_table "books", :force => true do |t|
+    t.string   "name"
+    t.string   "volume"
+    t.integer  "year"
+    t.string   "comment"
+    t.integer  "place_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "books", ["place_id"], :name => "index_books_on_place_id"
+  add_index "books", ["user_id"], :name => "index_books_on_user_id"
 
   create_table "places", :force => true do |t|
     t.string   "name"
@@ -19,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20121212203922) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
+
+  add_index "places", ["name"], :name => "index_places_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
