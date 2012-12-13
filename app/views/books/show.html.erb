@@ -1,0 +1,22 @@
+<% provide(:title, @book.name) %>
+
+<div class="row">
+  <aside class="span3">
+    <section>
+      <%= link_to image_tag('book.png', alt: 'Book'), book_path(@book), class: 'book_image' %>
+      <h1>
+        <%= @book.name %>
+      </h1>
+    </section>
+    <section>
+      <div class="edit_links_on_show">
+        <%= link_to 'Edit book', edit_book_path(@book) %>
+        <%= link_to 'Delete book', @book, method: :delete, confirm: 'Are you sure?' %>
+      </div>
+    </section>
+  </aside>
+  <div class="span9">
+    <p>Add some information here!</p>
+  </div>
+</div>
+
