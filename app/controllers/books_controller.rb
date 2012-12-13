@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_filter :correct_user, only: [ :show, :destroy, :edit, :update ]
 
   def new
-    @book = Book.new
+    @book = Book.new(params[:book])
   end
 
   def create

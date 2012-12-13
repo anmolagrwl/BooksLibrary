@@ -142,30 +142,8 @@ aside {
   }
 }
 
-.edit_links_on_show {
-  overflow: auto;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.create_buttons_on_show {
+.create_buttons_on_list {
   margin-top: 10px;
-
 }
 
 /* forms */
@@ -228,6 +206,9 @@ form {
       border-bottom: 1px solid $grayLighter;
     }
   }
+  div {
+    overflow: auto;
+  }
 }
 
 /* microposts */
@@ -261,7 +242,15 @@ select {
   height: auto;
 }
 
-.book_image {
-  float: left;
-  margin-right: 10px;
+.place_details {
+  display: inline-block;
+  a {
+    margin-right: 5px;
+  }
+}
+
+.books_count {
+  color: gray;
+  padding: 0 10px;
+  border-left: 1px solid $grayLighter;
 }

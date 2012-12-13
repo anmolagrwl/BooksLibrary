@@ -10,8 +10,11 @@
 
       <div class="form-actions">
         <%= f.submit 'Save changes', class: 'btn btn-primary' %>
+        <%= link_to 'Delete place', @place, method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger center' %>
         <%= link_to 'Cancel', :back, class: 'btn pull-right' %>
       </div>
     <% end %>
+
+
   </div>
 </div>
