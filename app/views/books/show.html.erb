@@ -9,12 +9,7 @@
       </h1>
     </div>
     <table class="table table-bordered">
-      <tr>
-        <th>Name</th>
-        <th>Volume</th>
-        <th>Year</th>
-        <th>Comment</th>
-      </tr>
+      <%= render 'shared/book_table_header' %>
       <%= render 'shared/book_row_info', book: @book %>
     </table>
     <div>

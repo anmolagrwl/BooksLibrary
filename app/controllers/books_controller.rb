@@ -4,6 +4,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    session[:return_to] = place_path(params[:place_id])
     @book.place_id = params[:place_id]
   end
 
@@ -11,7 +12,12 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
     @book.user_id = current_user.id
     if @book.save
-      redirect_to books_path
+      if session[:return_to].present? && @book.place_id
+        redirect_to place_path(@book.place_id)
+      else
+        redirect_to books_path
+      end
+      session.delete(:return_to)
     else
       render 'new'
     end

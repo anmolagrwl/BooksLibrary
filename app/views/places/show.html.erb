@@ -9,22 +9,17 @@
       </h1>
     </div>
     <h2>
-      Books, that are located in this Place
+      Books that are located here
     </h2>
     <table class="table table-bordered">
-      <tr>
-        <th>Name</th>
-        <th>Volume</th>
-        <th>Year</th>
-        <th>Comment</th>
-      </tr>
+      <%= render 'shared/book_table_header' %>
       <% @place.books.each do |book| %>
           <%= render 'shared/book_row_info', book: book %>
       <% end %>
     </table>
     <div>
       <%= link_to 'Edit place', edit_place_path(@place), class: 'btn' %>
-      <%= link_to 'Add new Book', "#{new_book_path}?place_id=#{@place.id}", class: 'btn' %>
+      <%= link_to 'Add new Book', new_book_path(place_id: @place.id), class: 'btn' %>
     </div>
   </div>
 </div>

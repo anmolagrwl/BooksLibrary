@@ -1,5 +1,5 @@
 <tr>
-  <td><%= book.name %></td>
+  <td><%= link_to book.name, book_path(book) %></td>
   <td><%= book.volume %></td>
   <td><%= book.year %></td>
   <td><%= book.comment %></td>
