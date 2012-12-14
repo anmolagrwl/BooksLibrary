@@ -3,11 +3,11 @@
 
   <span>
     <%= link_to book.name, book_path(book) %><%= ", #{book.year}" unless book.year.to_s.empty? %>.
-    <%= "Том: #{book.volume}." unless book.volume.empty? %>
+    <%= "Volume: #{book.volume}." unless book.volume.empty? %>
+    <i>
+      <%= book.comment %>
+    </i>
   </span>
-  <i>
-    <%= book.comment %>
-  </i>
   <% if book.place_id %>
     <%= link_to image_tag('place.png', alt: book.place.name), place_path(book.place), class: 'pull-right' %>
   <% end %>

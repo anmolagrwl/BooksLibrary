@@ -1,10 +1,12 @@
 class Book < ActiveRecord::Base
-  attr_accessible :comment, :id, :name, :place_id, :user_id, :volume, :year
+  attr_accessible :id, :name, :volume, :year, :comment, :place_id, :user_id
 
   belongs_to :place
   belongs_to :user
 
   validates :name,  presence: true, length: { maximum: 80 }
+  validates :volume,  length: { maximum: 20 }
+  validates_numericality_of :year, allow_nil: true, greater_than: 1900, less_than_or_equal_to: Time.now.year
+  validates :comment,  length: { maximum: 120 }
   validates :user_id,  presence: true
-  validates_numericality_of :year, allow_nil: true, greater_than_or_equal_to: 1900
 end
