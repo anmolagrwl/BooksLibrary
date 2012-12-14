@@ -21,7 +21,6 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = Place.find(params[:id])
   end
 
   def edit
@@ -45,8 +44,12 @@ class PlacesController < ApplicationController
   private
 
   def correct_user
-    @place = Place.find(params[:id])
-    owner = @place.user
-    redirect_to places_path unless current_user == owner
+    @place = Place.find_by_id(params[:id])
+    if @place
+      owner = @place.user
+      redirect_to places_path unless current_user == owner
+    else
+      redirect_to places_path
+    end
   end
 end

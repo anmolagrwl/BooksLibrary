@@ -28,7 +28,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def destroy
@@ -52,8 +51,12 @@ class BooksController < ApplicationController
   private
 
   def correct_user
-    @book = Book.find(params[:id])
-    owner = @book.user
-    redirect_to books_path unless current_user == owner
+    @book = Book.find_by_id(params[:id])
+    if @book
+      owner = @book.user
+      redirect_to books_path unless current_user == owner
+    else
+      redirect_to books_path
+    end
   end
 end

@@ -7,6 +7,11 @@
         <%= link_to image_tag('book.png', alt: 'Book'), book_path(@book) %>
         <%= @book.name %>
       </h1>
+      <% if @book.place_id %>
+        <h2>
+          This book is located in '<%= link_to @book.place.name, place_path(@book.place), class: 'book_location' %>'
+        </h2>
+      <% end %>
     </div>
     <table class="table table-bordered">
       <%= render 'shared/book_table_header' %>
