@@ -24,7 +24,7 @@
     </table>
     <div>
       <%= link_to 'Edit place', edit_place_path(@place), class: 'btn' %>
-      <%= link_to 'Add new Book', new_book_path, class: 'btn' %>
+      <%= link_to 'Add new Book', "#{new_book_path}?place_id=#{@place.id}", class: 'btn' %>
     </div>
   </div>
 </div>
