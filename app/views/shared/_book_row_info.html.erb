@@ -1,5 +1,11 @@
 <tr>
-  <td><%= link_to book.name, book_path(book) %></td>
+  <td>
+    <% if controller_name != 'books' %>
+      <%= link_to book.name, book_path(book) %>
+    <% else %>
+      <%= book.name %>
+    <% end %>
+  </td>
   <td><%= book.volume %></td>
   <td><%= book.year %></td>
   <td><%= book.comment %></td>
