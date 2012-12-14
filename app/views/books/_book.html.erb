@@ -1,8 +1,14 @@
 <li>
   <%= link_to image_tag('book.png', alt: 'Book'), book_path(book), class: 'book_image' %>
 
-  <%= link_to book.name, book_path(book) %>
+  <span>
+    <%= link_to book.name, book_path(book) %><%= ", #{book.year}" unless book.year.to_s.empty? %>.
+    <%= "Том: #{book.volume}." unless book.volume.empty? %>
+  </span>
   <i>
     <%= book.comment %>
   </i>
+  <% if book.place_id %>
+    <%= link_to image_tag('place.png', alt: book.place.name), place_path(book.place), class: 'pull-right' %>
+  <% end %>
 </li>
