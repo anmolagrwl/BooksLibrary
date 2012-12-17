@@ -1,19 +1,13 @@
 Library::Application.routes.draw do
 
+  resources :authors, only: [:create, :destroy]
+
   resources :books
   resources :places
 
   devise_for :users, only: [:sessions, :registration]
-  #do
-  #  get '/sign_in' => 'devise/sessions#new'
-  #  get '/sign_out' => 'devise/sessions#destroy'
-  #  get '/sign_up' => 'devise/registrations#new'
-  #end
 
   root to: 'static_pages#home'
-
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -253,3 +253,9 @@ select {
 .image_column {
   width: 52px;
 }
+
+.delete_author {
+  &:hover {
+    text-decoration: none;
+  }
+}

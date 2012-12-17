@@ -1,4 +1,7 @@
 <tr>
+  <td id='authors_td'>
+    <%= render 'shared/authors_cell', book: book %>
+  </td>
   <td>
     <% if controller_name != 'books' %>
       <%= link_to book.name, book_path(book) %>

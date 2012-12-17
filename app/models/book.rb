@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
 
   belongs_to :place
   belongs_to :user
+  has_many :authors, dependent: :destroy
 
   validates :name,  presence: true, length: { maximum: 80 }
   validates :volume,  length: { maximum: 20 }

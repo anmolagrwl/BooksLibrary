@@ -1,0 +1,17 @@
+<% book.authors.each do |author| %>
+  <span>
+    <%= author.name %>
+  </span>
+  <% if %w(books authors).include?(controller_name) %>
+    <%= link_to author, method: :delete, confirm: 'Are you sure?', class: 'delete_author', remote: true do %>
+      <i class="icon-remove"></i>
+    <% end %>
+  <% end %>
+  <br/>
+  <%= form_for(book.authors.build(book_id: book.id), remote: true) do |f| %>
+    <div class="input-append">
+      <%= f.text_field :name, class: 'span1' %>
+      <%= f.submit 'Add', class: 'btn' %>
+    </div>
+  <% end %>
+<% end %>
