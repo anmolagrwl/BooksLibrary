@@ -1,0 +1,6 @@
+<%= f.label :name, 'Author' %>
+<div class="input-append">
+  <%= f.text_field :name, class:'span7' %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to 'remove', '#', class: 'remove_fields btn btn-inverse' %>
+</div>

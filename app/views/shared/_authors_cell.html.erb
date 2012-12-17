@@ -1,19 +1,11 @@
-<% book.authors.each do |author| %>
-  <span>
-    <%= author.name %>
-  </span>
-  <% if %w(books authors).include?(controller_name) %>
-    <%= link_to author, method: :delete, confirm: 'Are you sure?', class: 'delete_author', remote: true do %>
-      <i class="icon-remove"></i>
+<% if book.authors.count == 1 %>
+  <%= book.authors.first.name %>
+<% else %>
+  <ol>
+    <% book.authors.each do |author| %>
+      <li>
+        <%= author.name %>
+      </li>
     <% end %>
-  <% end %>
-  <br/>
+  </ol>
 <% end %>
-
-<div class="input-append" id="addAuthor">
-  <%= form_for(book.authors.build(book_id: book.id), remote: true) do |f| %>
-    <%= f.hidden_field :book_id %>
-    <%= f.text_field :name, class: 'span2' %>
-    <%= f.submit 'Add', class: 'btn' %>
-  <% end %>
-</div>

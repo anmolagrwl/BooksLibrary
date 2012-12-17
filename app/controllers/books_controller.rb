@@ -4,6 +4,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.authors.build
     if params[:place_id].present?
       session[:return_to] = place_path(params[:place_id])
       @book.place_id = params[:place_id]

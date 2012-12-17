@@ -1,13 +1,13 @@
 <tr>
-  <td class="span2" id='authors_td'>
-    <%= render 'shared/authors_cell', book: book %>
-  </td>
   <td>
     <% if controller_name != 'books' %>
       <%= link_to book.name, book_path(book) %>
     <% else %>
       <%= book.name %>
     <% end %>
+  </td>
+  <td>
+    <%= render 'shared/authors_cell', book: book %>
   </td>
   <td><%= book.volume %></td>
   <td><%= book.year %></td>
