@@ -8,6 +8,16 @@
     <i>
       <%= book.comment %>
     </i>
+    <br/>
+    <span class="label">Authors:</span>
+    <% authors = book.authors %>
+    <% if authors.count > 0 %>
+      <ol class="authors-list">
+      <% authors.each do |author| %>
+        <li><%= author.name %></li>;
+      <% end %>
+      </ol>
+    <% end %>
   </td>
   <td class='image_column'>
     <% if book.place_id %>

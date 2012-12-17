@@ -254,6 +254,8 @@ select {
   width: 52px;
 }
 
-#addAuthor {
-  margin-top: 15px;
+.authors-list {
+  li {
+    display: inline;
+  }
 }
