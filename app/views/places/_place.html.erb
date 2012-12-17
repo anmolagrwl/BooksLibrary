@@ -1,7 +1,8 @@
-<li>
-  <div>
-    <%= link_to image_tag('place.png', alt: 'Place'), place_path(place), class: 'book_image' %>
-    <div class="place_details">
+<tr>
+  <td class='image_column'>
+    <%= link_to image_tag('place.png', alt: 'Place'), place_path(place) %>
+  </td>
+  <td>
       <%= link_to place.name, place_path(place) %>
       <span class="books_count">
         Books count:
@@ -9,6 +10,5 @@
           <%= place.books.count %>
         </strong>
       </span>
-    </div>
-  </div>
-</li>
+  </td>
+</tr>

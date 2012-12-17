@@ -1,9 +1,9 @@
 <% provide(:title, 'My books') %>
 <h1>My Books</h1>
 
-<ul class="index_list">
+<table class="table">
   <%= render @books %>
-</ul>
+</table>
 
 <div class="create_buttons_on_list">
   <%= link_to 'Add new Book', new_book_path, class: 'btn' %>

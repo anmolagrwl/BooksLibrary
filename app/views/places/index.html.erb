@@ -1,9 +1,9 @@
 <% provide(:title, 'My places') %>
 <h1>My Places</h1>
 
-<ul class="index_list">
+<table class="table">
   <%= render @places %>
-</ul>
+</table>
 
 <div class="create_buttons_on_list">
   <%= link_to 'Add new Place', new_place_path, class: 'btn' %>

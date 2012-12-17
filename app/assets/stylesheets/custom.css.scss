@@ -242,15 +242,14 @@ select {
   height: auto;
 }
 
-.place_details {
-  display: inline-block;
-  a {
-    margin-right: 5px;
-  }
-}
-
 .books_count {
   color: gray;
   padding: 0 10px;
+  margin-left: 10px;
   border-left: 1px solid $grayLighter;
+}
+
+// This is bad, but please, do not judge me :(
+.image_column {
+  width: 52px;
 }
