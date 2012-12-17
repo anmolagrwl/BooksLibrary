@@ -8,10 +8,12 @@
     <% end %>
   <% end %>
   <br/>
-  <%= form_for(book.authors.build(book_id: book.id), remote: true) do |f| %>
-    <div class="input-append">
-      <%= f.text_field :name, class: 'span1' %>
-      <%= f.submit 'Add', class: 'btn' %>
-    </div>
-  <% end %>
 <% end %>
+
+<div class="input-append" id="addAuthor">
+  <%= form_for(book.authors.build(book_id: book.id), remote: true) do |f| %>
+    <%= f.hidden_field :book_id %>
+    <%= f.text_field :name, class: 'span2' %>
+    <%= f.submit 'Add', class: 'btn' %>
+  <% end %>
+</div>
