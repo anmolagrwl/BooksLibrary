@@ -1,7 +1,5 @@
 Library::Application.routes.draw do
 
-  resources :authors, only: [:create, :destroy]
-
   resources :books
   resources :places
 
