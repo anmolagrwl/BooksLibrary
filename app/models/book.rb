@@ -10,6 +10,6 @@ class Book < ActiveRecord::Base
   validates :name,  presence: true, length: { maximum: 80 }
   validates :volume,  length: { maximum: 20 }
   validates_numericality_of :year, allow_nil: true, greater_than: 1900, less_than_or_equal_to: Time.now.year
-  validates :comment,  length: { maximum: 120 }
+  validates :comment,  length: { maximum: 350 }
   validates :user_id,  presence: true
 end
