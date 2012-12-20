@@ -3,8 +3,8 @@
     <%= link_to image_tag('book.png', alt: 'Book'), book_path(book) %>
   </td>
   <td>
-    <%= link_to book.name, book_path(book) %><%= ", #{book.year}" unless book.year.to_s.empty? %>.
-    <%= "Volume: #{book.volume}." unless book.volume.to_s.empty? %>
+    <%= link_to book.name, book_path(book) %><%= ", #{book.year}" unless book.year.blank? %>.
+    <%= "Volume: #{book.volume}." unless book.volume.blank? %>
     <i>
       <%= book.comment %>
     </i>
