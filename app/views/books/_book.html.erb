@@ -4,17 +4,17 @@
   </td>
   <td>
     <%= link_to book.name, book_path(book) %><%= ", #{book.year}" unless book.year.to_s.empty? %>.
-    <%= "Volume: #{book.volume}." unless book.volume.empty? %>
+    <%= "Volume: #{book.volume}." unless book.volume.to_s.empty? %>
     <i>
       <%= book.comment %>
     </i>
     <br/>
-    <span class="label">Authors:</span>
+    <span class="label label-inverse">Authors:</span>
     <% authors = book.authors %>
     <% if authors.count > 0 %>
       <ol class="authors-list">
       <% authors.each do |author| %>
-        <li><%= author.name %></li>;
+        <li><span class="label"><%= author.name %></span></li>;
       <% end %>
       </ol>
     <% end %>

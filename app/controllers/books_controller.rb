@@ -51,6 +51,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def import
+    temp = Book.import(params[:file], current_user)
+    flash[temp[:key]] = temp[:value]
+    redirect_to edit_user_registration_path(current_user)
+  end
+
   private
 
   def correct_user

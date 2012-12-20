@@ -1,6 +1,8 @@
 Library::Application.routes.draw do
 
-  resources :books
+  resources :books do
+    collection { post :import }
+  end
   resources :places
 
   devise_for :users, only: [:sessions, :registration]
