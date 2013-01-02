@@ -45,7 +45,11 @@ class BooksController < ApplicationController
   def update
     if @book.update_attributes(params[:book])
       flash[:success] = 'Book updated'
-      redirect_to @book
+      if params[:commit].present?
+        redirect_to @book
+      else
+        redirect_to :back
+      end
     else
       render 'edit'
     end

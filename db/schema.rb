@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218135533) do
+ActiveRecord::Schema.define(:version => 20130102203623) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(:version => 20121218135533) do
     t.string   "comment"
     t.integer  "place_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "on_sale",    :default => false
+    t.boolean  "sold",       :default => false
   end
 
   add_index "books", ["place_id"], :name => "index_books_on_place_id"

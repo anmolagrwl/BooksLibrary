@@ -1,0 +1,3 @@
+<%= form_for book, html: { id: "on_sale_#{book.id}" } do |f| %>
+  <%= f.check_box :on_sale, disabled: book.sold?, onclick: "$('#on_sale_#{book.id}').submit()" %>
+<% end %>
