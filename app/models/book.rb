@@ -27,8 +27,12 @@ class Book < ActiveRecord::Base
       spreadsheet.default_sheet = sheet
       (2..spreadsheet.last_row).each do |line|
         book = Book.new(user_id: user.id)
-        author_name = spreadsheet.cell(line, 'A')
-        book.authors << Author.create(name: author_name) unless author_name.blank?
+        author_names = spreadsheet.cell(line, 'A')
+        unless author_names.blank?
+          author_names.split(',').each do |name|
+            book.authors << Author.create(name: name.strip)
+          end
+        end
         book.name = spreadsheet.cell(line, 'B')
         book.volume = spreadsheet.cell(line, 'C').to_s.gsub(/\.0/, '')
         book.year = spreadsheet.cell(line, 'D')
