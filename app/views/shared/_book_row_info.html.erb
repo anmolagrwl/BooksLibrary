@@ -13,4 +13,5 @@
   <td><%= book.year %></td>
   <td><%= book.comment %></td>
   <td><%= render 'shared/book_sale_checkbox', book: book %></td>
+  <td><%= number_to_rubles(book.price) %></td>
 </tr>

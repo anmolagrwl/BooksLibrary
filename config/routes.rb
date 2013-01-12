@@ -7,6 +7,7 @@ Library::Application.routes.draw do
 
   devise_for :users, only: [:sessions, :registration]
 
+  match '/sales', to: 'static_pages#sales'
   root to: 'static_pages#home'
 
   # The priority is based upon order of creation:

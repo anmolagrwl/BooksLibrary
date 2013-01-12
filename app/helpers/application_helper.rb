@@ -19,4 +19,7 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields btn", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+  def number_to_rubles(number)
+    number_to_currency(number, unit: '', precision: 0)
+  end
 end

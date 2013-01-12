@@ -12,6 +12,7 @@ class Book < ActiveRecord::Base
   validates :volume,  length: { maximum: 20 }
   validates_numericality_of :year, allow_nil: true, greater_than: 1900, less_than_or_equal_to: Time.now.year
   validates :comment,  length: { maximum: 350 }
+  validates_numericality_of :price, allow_nil: true
   validates :user_id,  presence: true
 
   def self.import(file, user)

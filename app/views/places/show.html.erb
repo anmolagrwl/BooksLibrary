@@ -14,7 +14,9 @@
     <table class="table table-bordered">
       <%= render 'shared/book_table_header' %>
       <% @place.books.each do |book| %>
+        <% unless book.sold? %>
           <%= render 'shared/book_row_info', book: book %>
+        <% end %>
       <% end %>
     </table>
     <div>

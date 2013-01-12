@@ -19,5 +19,14 @@
 <%= f.label :comment %>
 <%= f.text_area :comment, rows: 4 %>
 
+<%= f.label :price %>
+<%= f.text_field :price %>
+
+<%= f.label :sold, class: 'checkbox' do %>
+  <%= f.check_box :sold %>
+  Book is sold
+<% end %>
+
+
 <%= f.label :place_id %>
 <%= f.collection_select :place_id, current_user.places, :id, :name, include_blank: 'Please select' %>
