@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11'
 gem 'faker', '1.0.1'
 gem 'jquery-rails', '2.0.2'
 gem 'devise', '2.1.2'
