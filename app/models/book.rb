@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   attr_accessible :id, :name, :volume, :year, :comment, :place_id, :user_id, :authors_attributes,
-                  :on_sale, :sold, :price
+                  :on_sale, :sold, :price, :sold_date
 
   belongs_to :place
   belongs_to :user

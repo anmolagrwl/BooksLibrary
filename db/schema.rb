@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102204432) do
+ActiveRecord::Schema.define(:version => 20130113113527) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130102204432) do
     t.boolean  "on_sale",    :default => false
     t.boolean  "sold",       :default => false
     t.integer  "price",      :default => 0
+    t.date     "sold_date"
   end
 
   add_index "books", ["place_id"], :name => "index_books_on_place_id"
