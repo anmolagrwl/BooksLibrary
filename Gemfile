@@ -5,6 +5,8 @@ gem 'faker', '1.0.1'
 gem 'jquery-rails', '2.0.2'
 gem 'devise', '2.1.2'
 gem 'roo'
+gem 'bootstrap-sass'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -20,7 +22,6 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'  
-  gem 'bootstrap-sass'
 end
 
 group :test do
