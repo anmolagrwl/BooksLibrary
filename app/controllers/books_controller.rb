@@ -43,7 +43,7 @@ class BooksController < ApplicationController
   end
 
   def update
-    if @book.update_attributes(params[:book])
+    if @book.update_attributes(params[:book]) && update_sold_date(@book)
       flash[:success] = 'Book updated'
       if params[:commit].present?
         redirect_to @book
@@ -71,5 +71,14 @@ class BooksController < ApplicationController
     else
       redirect_to books_path
     end
+  end
+
+  def update_sold_date(book)
+    if book.sold?
+      book.sold_date = Time.now if book.sold_date.blank?
+    else
+      book.sold_date = nil
+    end
+    book.save
   end
 end
