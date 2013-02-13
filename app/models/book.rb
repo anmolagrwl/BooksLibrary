@@ -31,7 +31,7 @@ class Book < ActiveRecord::Base
         book = Book.new(user_id: user.id)
         author_names = spreadsheet.cell(line, 'A')
         unless author_names.blank?
-          author_names.split(',').each do |name|
+          author_names.to_s.split(',').each do |name|
             book.authors << Author.create(name: name.strip)
           end
         end
@@ -43,9 +43,10 @@ class Book < ActiveRecord::Base
         book.save
       end
     end
-    return {key: :notice, value: 'Books successfully imported'}
   rescue
     return {key: :error, value: "Some error happened. Books weren't imported. We are sorry."}
+  else 
+    return {key: :notice, value: 'Books successfully imported'}
   end
 
   def self.open_spreadsheet(file)

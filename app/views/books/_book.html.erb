@@ -19,10 +19,7 @@
         <% end %>
         </ol>
       <% end %>
-    </td>
-    <td>
-      <%= render 'shared/book_sale_checkbox', book: book %>
-    </td>
+    </td>    
     <td class='image_column'>
       <% if book.place_id %>
         <%= link_to image_tag('place.png', alt: book.place.name), place_path(book.place) %>
