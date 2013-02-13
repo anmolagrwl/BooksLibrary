@@ -7,8 +7,13 @@ gem 'devise', '2.1.2'
 gem 'roo'
 gem 'bootstrap-sass'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
-group :development, :test do
+group :development, :test do  
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   gem 'guard-rspec', '1.2.1'
