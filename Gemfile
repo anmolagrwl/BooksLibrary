@@ -6,6 +6,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'devise', '2.1.2'
 gem 'roo'
 gem 'bootstrap-sass'
+gem 'json'
 
 group :development do
   gem 'better_errors'

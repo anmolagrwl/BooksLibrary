@@ -20,6 +20,10 @@
     <div>
       <%= link_to 'Edit this book', edit_book_path(@book), class: 'btn' %>
     </div>
+    <div>
+      <br />
+      <%= get_book_info_from_google(@book) %>
+    </div>
   </div>
 </div>
 
